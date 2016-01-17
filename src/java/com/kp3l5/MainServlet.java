@@ -17,9 +17,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 @WebServlet(urlPatterns={"/dukeetf"}, asyncSupported=true)
 public class MainServlet extends HttpServlet {
-    private static final Logger logger = Logger.getLogger("MainServlet");
+    private static final Logger logger = Logger.getLogger("DukeETFServlet");
     private static final long serialVersionUID = 2114153638027156979L;
     private Queue<AsyncContext> requestQueue;
     @EJB private PriceVolumeBean pvbean; 
@@ -81,3 +82,4 @@ public class MainServlet extends HttpServlet {
         logger.log(Level.INFO, "Connection open.");
     }
 }
+

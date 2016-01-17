@@ -19,7 +19,7 @@ public class PriceVolumeBean {
     /* Use the container's timer service */
     @Resource TimerService tservice;
     private Random random;
-    private DukeETFServlet servlet;
+    private MainServlet servlet;
     private volatile double price = 100.0;
     private volatile int volume = 300000;
     private static final Logger logger = Logger.getLogger("PriceVolumeBean");
@@ -33,7 +33,7 @@ public class PriceVolumeBean {
         tservice.createIntervalTimer(1000, 1000, new TimerConfig());
     }
     
-    public void registerServlet(DukeETFServlet servlet) {
+    public void registerServlet(MainServlet servlet) {
         /* Associate a servlet to send updates to */
         this.servlet = servlet;
     }
